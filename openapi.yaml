@@ -1,0 +1,125 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: 'Orders API'
+  description: 'API for an app for orders'
+paths:
+  /repairRequest:
+    get:
+      operationId: app.get_repair_forms
+      summary: gets repair forms
+      description: stores repair forms
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: startDate
+        description: pass an optional search string for looking up the event
+        required: true
+        type: string
+        format: date-time
+      - in: query
+        name: endDate
+        description: pass the end date to get request
+        required: true
+        type: string
+        format: date-time
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/RepairFormData'
+  /orders:
+  
+    get:
+      operationId: app.get_order_forms
+      summary: gets order forms
+      description: stores order forms
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: startDate
+        description: pass an optional search string for looking up the event
+        required: true
+        type: string
+        format: date-time
+      - in: query
+        name: endDate
+        description: pass the end date to get request
+        required: true
+        type: string
+        format: date-time
+      responses:
+        200:
+          description: search results matching criteria
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/OrderFormData'
+
+
+definitions:
+  RepairFormData:
+    type: object
+    required:
+      - customer_id
+      - customer_name
+      - customer_address
+      - shoe_type
+      - damage_description
+      - timestamp
+    properties:
+      customer_id:
+        type: string
+        example: "a01055260"
+      customer_name:
+        type: string
+        example: "Alex"
+      customer_address:
+        type: string
+        example: "1234 granville street"
+      shoe_type:
+        type: string
+        example: "Sneakers"
+      damage_description:
+        type: string
+        example: "Glue on the soles are gone."
+      timestamp:
+        type: string
+        format: date-time
+        example: 2020-01-09T00:00:00.001Z
+        
+  OrderFormData:
+    type: object
+    required:
+      - customer_id
+      - customer_name
+      - customer_address
+      - shoe_id
+      - price_id
+      - timestamp
+    properties:
+      customer_id:
+        type: string
+        example: "a01055260"
+      customer_name:
+        type: string
+        example: "Alex"
+      customer_address:
+        type: string
+        example: "1234 granville street"
+      shoe_id:
+        type: string
+        example: "nike-abc123"
+      price_id:
+        type: number
+        example: 129.99
+      timestamp:
+        type: string
+        format: date-time
+        example: 2020-01-09T00:00:00.001Z
+
+# Added by API Auto Mocking Plugin

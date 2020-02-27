@@ -1,0 +1,7 @@
+version: 1
+datastore:
+  user: "root"
+  password: "P@ssw0rd"
+  hostname: "127.0.0.1"
+  port: "3306"
+  db: "ACIT3855"
