@@ -1,5 +1,5 @@
 version: 1
 kafka:
-  server: '127.0.0.1'
+  server: 'ec2-54-202-62-41.us-west-2.compute.amazonaws.com'
   port: '9092'
   topic: 'events'
