@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 MAINTAINER Alex Lai "alai75@my.bcit.ca"
 
 RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev install libmysqlclient-dev
+    apt-get install -y python3-pip python3-dev libmysqlclient-dev
 
 COPY ./requirements.txt /app/requirements.txt
 
