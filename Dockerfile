@@ -9,7 +9,7 @@ COPY ./requirements.txt /app/requirements.txt
 
 WORKDIR /app
 
-RUN python3-pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY . /app
 
