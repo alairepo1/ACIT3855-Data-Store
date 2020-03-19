@@ -35,7 +35,6 @@ def get_order_forms(startDate, endDate):
     Takes in a start and end date and filters out the order forms
     that are within the dates
     """
-
     results_list = []
     session=DB_SESSION()
 
