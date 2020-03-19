@@ -1,7 +1,7 @@
 import mysql.connector
 
 db_conn = mysql.connector.connect(
-    host="127.0.0.1", user="root", password="P@ssw0rd", database="events")
+    host="ec2-54-202-62-41.us-west-2.compute.amazonaws.com:3306", user="root", password="P@ssw0rd", database="events")
 db_cursor = db_conn.cursor()
 
 db_cursor.execute('''
